@@ -14,3 +14,5 @@ Copy all aux timelines to the clipboard and run the search with a keyword or the
 
 IMPORTANT - I haven't accounted for the user entering Watchout's own keywords.. If you put something like 
 "Struct" or "float" you will get incorrect data, but no errors.
+
+You will also get incorrect data if the keyword you are searching for is in a control cue or string command.

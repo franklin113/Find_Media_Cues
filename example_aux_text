@@ -1,0 +1,1808 @@
+UTF8 DATATON_DFC_DATA_590925_620721_AUC069 {
+	"Structure and File Format (C) Copyright Dataton AB" 2017 1
+	"WATCHMAKER" 6 2 2 0
+	ObjTransferable ObjTransferable struct extends {
+		TextTransferable struct extends {
+			Transferable struct {
+			}
+		} {
+		}
+	} {
+		mObjData list object true,
+		mClassName string
+	} {
+		{ // mObjData
+			TimelineTask struct extends {
+				Task struct extends {
+					TaskListItem struct {
+						mTaskNum int
+					}
+				} {
+					mTrigger Expression struct {
+						mItems list ExprItem struct {
+						} true
+					}
+				}
+			} {
+				mAction reference AuxTimeline struct extends {
+					Timeline struct extends {
+						VisibleMedia struct extends {
+							Media struct extends {
+								MediaListItem struct {
+								}
+							} {
+								mFile MediaFile struct {
+									mPath string,
+									mFileSize int,
+									mModDate int,
+									mHasURL bool,
+									mIsProxy bool,
+									mNoDownload bool,
+									mAutoRefresh bool
+								},
+								mStagePreview bool
+							}
+						} {
+							mDim IDimension struct extends {
+								iPDBase struct {
+									x int,
+									y int
+								}
+							} {
+							},
+							mAlphaMode AlphaMode enum {
+								KAMUnknown 0,
+								KAMNoAlpha 1,
+								KAMStraight 2,
+								KAMPreWhite 3,
+								KAMPreBlack 4
+							},
+							mForcedAlphaMode AlphaMode,
+							mSuppressThumbnail bool
+						}
+					} {
+						mName string,
+						mLayers list Layer struct {
+							mName string,
+							mCues list Cue struct {
+								mTime TimeRange struct {
+									MStart time,
+									MDuration time
+								},
+								mCueID int
+							} true,
+							mExpanded bool,
+							mIndex int,
+							mConditional int,
+							mDisabled bool,
+							mStandBy StandByMode enum {
+								kSB_Normal 0,
+								kSB_StandBy 1,
+								kSB_Both 2
+							},
+							mLocked bool,
+							mSpecLevels bool,
+							mLevels int
+						} false,
+						mCurrLayerIndex int,
+						mTimeScale int,
+						mDuration time,
+						mCueIDSeed int,
+						mFrontmostAtTop bool,
+						MWinState TimelineWinState struct extends {
+							WinState struct {
+								mState State enum {
+									kWS_NotShown 0,
+									kWS_Iconized 1,
+									kWS_Normal 2,
+									kWS_ZoomedFull 3
+								},
+								mLeft int,
+								mTop int,
+								mWidth int,
+								mHeight int,
+								mActive bool
+							}
+						} {
+							MSashPos int,
+							MHdrWidth int,
+							MVScrollPos int
+						},
+						mFixedDuration bool,
+						mSpecTiers bool,
+						mTiers int
+					}
+				} {
+					mAlwaysOnTop StackingOrder enum {
+						kTaskListOrder 0,
+						kOnTop 1,
+						kAboveEdgeBlend 2
+					}
+				} false
+			} {
+				0, // mTaskNum
+				{ // mTrigger
+					{ // mItems
+					}
+				},
+				{ // mAction
+					{ "", 0, 0, false, false, false, false }, // mFile mPath mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+					true, // mStagePreview
+					{ 0, 0 }, // mDim x y
+					0, // mAlphaMode
+					0, // mForcedAlphaMode
+					false, // mSuppressThumbnail
+					"Timeline 84", // mName
+					{ // mLayers
+						{
+							"", // mName
+							{ // mCues
+								MediaCue struct extends {
+									MediaCueBase struct extends {
+										TweeningCue struct extends {
+											Cue
+										} {
+										}
+									} {
+										mMedia reference Media true
+									}
+								} {
+									mPreroll time,
+									mParams list TweenParam struct {
+									} true,
+									mPreviewQuality PreviewQuality enum {
+										kPQ_Best 0,
+										kPQ_Reduced 1,
+										kPQ_None 2
+									},
+									mInitialPos Point3D struct extends {
+										_pvs3DBase struct {
+											x float,
+											y float,
+											z float
+										}
+									} {
+									},
+									mOrientAlongPath bool,
+									mRenderAsMaskOnly bool,
+									mMask Masking enum {
+										kMM_None 0,
+										kMM_Alpha 1,
+										kMM_AlphaInv 2,
+										kMM_Luma 3,
+										kMM_LumaInv 4
+									},
+									mBlend Blending enum {
+										kBM_Normal 0,
+										kBM_Add 1,
+										kBM_Multiply 2,
+										kBM_Screen 3,
+										kBM_Lighten 4,
+										kBM_Darken 5,
+										kBM_Linear_Burn 6
+									},
+									mExplicitTarget bool,
+									mPlayThroughDisplay reference StageItem struct extends {
+										StageListItem struct {
+										}
+									} {
+										mName string,
+										mLoc IPoint struct extends {
+											iPDBase
+										} {
+										},
+										mAddress string,
+										mPrimary bool,
+										mEnabled bool,
+										mDialogState ModelessDialogState struct extends {
+											WinState
+										} {
+											mLastTab int,
+											mNotebook string
+										}
+									} true,
+									mShader reference SCProxy struct {
+										mRecipe ShaderRecipe struct {
+											mIdentifiers string,
+											mNumbIdentifiers int,
+											mHash int
+										}
+									} false,
+									mStacking ZOrder enum {
+										kZO_Default 0,
+										kZO_ByLayer 1,
+										kZO_ByDepth 2
+									},
+									mOrientation FwdMotion enum {
+										kFM_XPlus 0,
+										kFM_XMinus 1,
+										kFM_YPlus 2,
+										kFM_YMinus 3,
+										kFM_ZPlus 4,
+										kFM_ZMinus 5
+									},
+									mLocalVanishingPoint bool,
+									mInteractive string,
+									mExtTransform bool
+								} {
+									{ 2.0, 3.0 }, // mTime MStart MDuration
+									1, // mCueID
+									StillMedia struct extends { // mMedia
+										VisibleMedia
+									} {
+										mSprite bool,
+										mIsPreSplit bool,
+										mMultiFileExt string
+									} #3334 {
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Circle_Colored_01.png", 4984408, 1534888330, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 3240, 1920 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad struct extends {
+											_tweenPointQP struct extends {
+												_quadTweenPoint struct extends {
+													TweenPoint struct extends {
+														TweenParam
+													} {
+														mTimePos float
+													}
+												} {
+													mSmooth bool
+												}
+											} {
+												mValue Point3D
+											}
+										} {
+										} {
+											0, // mTimePos
+											false, // mSmooth
+											{ 1620, 960, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1720, 3660, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 5.0, 3.0 }, // mTime MStart MDuration
+									2, // mCueID
+									StillMedia #3335 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Circle_Colored_02.png", 1470765, 1534888285, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 8.0, 3.0 }, // mTime MStart MDuration
+									3, // mCueID
+									StillMedia #3336 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Circle_Scenic_01.png", 3539082, 1534888501, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 11.0, 3.0 }, // mTime MStart MDuration
+									4, // mCueID
+									StillMedia #3337 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Diamond_Colored_01.png", 1614881, 1534884542, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 14.0, 3.0 }, // mTime MStart MDuration
+									5, // mCueID
+									StillMedia #3338 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Diamond_Colored_02.png", 1491203, 1534884570, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 17.0, 3.0 }, // mTime MStart MDuration
+									6, // mCueID
+									StillMedia #3339 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Diamond_Scenic_01.png", 3383514, 1534884499, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 20.0, 3.0 }, // mTime MStart MDuration
+									7, // mCueID
+									StillMedia #3340 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Rectangle_Colored_01.png", 944140, 1534884203, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 23.0, 3.0 }, // mTime MStart MDuration
+									8, // mCueID
+									StillMedia #3341 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Rectangle_Scenic_01.png", 3406746, 1534884421, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 26.0, 3.0 }, // mTime MStart MDuration
+									9, // mCueID
+									StillMedia #3383 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/BW_ao/Circle_ao_01.png", 2332190, 1534964274, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 29.0, 3.0 }, // mTime MStart MDuration
+									10, // mCueID
+									StillMedia #3384 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/BW_ao/Rectangle_ao_01.png", 1422520, 1534964340, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 32.0, 3.0 }, // mTime MStart MDuration
+									11, // mCueID
+									StillMedia #3385 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/BW_ao/Diamond_ao_01.png", 1692107, 1534964677, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 35.0, 3.0 }, // mTime MStart MDuration
+									12, // mCueID
+									StillMedia #3342 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_01_Cent"
+											"er.png", 1310836, 1534888365, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 38.0, 3.0 }, // mTime MStart MDuration
+									13, // mCueID
+									StillMedia #3343 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_01_Left"
+											".png", 1760901, 1534888351, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 41.0, 3.0 }, // mTime MStart MDuration
+									14, // mCueID
+									StillMedia #3344 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_01_Righ"
+											"t.png", 1749586, 1534888383, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 44.0, 3.0 }, // mTime MStart MDuration
+									15, // mCueID
+									StillMedia #3345 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_02_Cent"
+											"er.png", 1540403, 1534888414, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 47.0, 3.0 }, // mTime MStart MDuration
+									16, // mCueID
+									StillMedia #3346 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_02_Left"
+											".png", 1990850, 1534888402, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 50.0, 3.0 }, // mTime MStart MDuration
+									17, // mCueID
+									StillMedia #3347 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Circle_Colored_02_Righ"
+											"t.png", 2015715, 1534888424, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 53.0, 3.0 }, // mTime MStart MDuration
+									18, // mCueID
+									StillMedia #3348 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Diamond_Colored_01_Lef"
+											"t.png", 1926649, 1534884711, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 56.0, 3.0 }, // mTime MStart MDuration
+									19, // mCueID
+									StillMedia #3349 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Diamond_Colored_01_Mid"
+											"dle.png", 1241520, 1534884723, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 59.0, 3.0 }, // mTime MStart MDuration
+									20, // mCueID
+									StillMedia #3350 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Diamond_Colored_01_Rig"
+											"ht.png", 1924569, 1534884736, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:02.0, 3.0 }, // mTime MStart MDuration
+									21, // mCueID
+									StillMedia #3351 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Rectangle_Colored_01_C"
+											"enter.png", 923417, 1534884378, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:05.0, 3.0 }, // mTime MStart MDuration
+									22, // mCueID
+									StillMedia #3352 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Rectangle_Colored_01_L"
+											"eft.png", 1480084, 1534884366, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:08.0, 3.0 }, // mTime MStart MDuration
+									23, // mCueID
+									StillMedia #3353 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/IndividualMonitors/Rectangle_Colored_01_R"
+											"ight.png", 1458169, 1534884390, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:11.0, 3.0 }, // mTime MStart MDuration
+									24, // mCueID
+									StillMedia #3386 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Rectangle_Scenic_Stadium_02.png", 4403414, 1534964558, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:14.0, 3.0 }, // mTime MStart MDuration
+									25, // mCueID
+									StillMedia #3387 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/Rectangle_Scenic_Stadium_01.png", 4622982, 1534964528, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:17.0, 3.0 }, // mTime MStart MDuration
+									26, // mCueID
+									StillMedia #3388 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/DataBit_scenic_01.png", 3119180, 1534964886, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								},
+								MediaCue {
+									{ 1:20.0, 3.0 }, // mTime MStart MDuration
+									27, // mCueID
+									StillMedia #3389 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/2018 LED Monitors_FROM GFX/08_21_18/1920x1080/DataBit_ao_01.png", 1416429, 1534964827, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 3240, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								}
+							},
+							false, // mExpanded
+							1, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							2, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							3, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						}
+					},
+					1, // mCurrLayerIndex
+					50, // mTimeScale
+					10:00.0, // mDuration
+					27, // mCueIDSeed
+					true, // mFrontmostAtTop
+					{ 0, 0, 0, 0, 0, false, 0, 0, 0 }, // MWinState mState mLeft mTop mWidth mHeight mActive MSashPos MHdrWidth MVScrollPos
+					false, // mFixedDuration
+					false, // mSpecTiers
+					0, // mTiers
+					0 // mAlwaysOnTop
+				}
+			},
+			TimelineTask {
+				0, // mTaskNum
+				{ // mTrigger
+					{ // mItems
+					}
+				},
+				{ // mAction
+					{ "", 0, 0, false, false, false, false }, // mFile mPath mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+					true, // mStagePreview
+					{ 0, 0 }, // mDim x y
+					0, // mAlphaMode
+					0, // mForcedAlphaMode
+					false, // mSuppressThumbnail
+					"test", // mName
+					{ // mLayers
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							1, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							2, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+								ControlCue struct extends {
+									Cue
+								} {
+									mName string,
+									mNamedTarget bool,
+									mTarget TargetTimeline enum {
+										kCCT_Current 0,
+										kCCT_Main 1,
+										kCCT_Named 2
+									},
+									mTargetName string,
+									mStop bool,
+									mJump bool,
+									mToCue bool,
+									mReverse bool,
+									mRun bool,
+									mJumpTime time,
+									mRestartDelay time,
+									mJumpCue string
+								} {
+									{ 2.9, 0.001 }, // mTime MStart MDuration
+									1, // mCueID
+									"test cue", // mName
+									false, // mNamedTarget
+									0, // mTarget
+									"", // mTargetName
+									false, // mStop
+									false, // mJump
+									false, // mToCue
+									false, // mReverse
+									true, // mRun
+									0.0, // mJumpTime
+									0.0, // mRestartDelay
+									"" // mJumpCue
+								}
+							},
+							false, // mExpanded
+							3, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							1 // mLevels
+						}
+					},
+					3, // mCurrLayerIndex
+					50, // mTimeScale
+					10:00.0, // mDuration
+					1, // mCueIDSeed
+					true, // mFrontmostAtTop
+					{ 0, 0, 0, 0, 0, false, 0, 0, 0 }, // MWinState mState mLeft mTop mWidth mHeight mActive MSashPos MHdrWidth MVScrollPos
+					false, // mFixedDuration
+					false, // mSpecTiers
+					0, // mTiers
+					0 // mAlwaysOnTop
+				}
+			},
+			TimelineTask {
+				0, // mTaskNum
+				{ // mTrigger
+					{ // mItems
+					}
+				},
+				{ // mAction
+					{ "", 0, 0, false, false, false, false }, // mFile mPath mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+					true, // mStagePreview
+					{ 0, 0 }, // mDim x y
+					0, // mAlphaMode
+					0, // mForcedAlphaMode
+					false, // mSuppressThumbnail
+					"Timeline 86", // mName
+					{ // mLayers
+						{
+							"", // mName
+							{ // mCues
+								MediaCue {
+									{ 3.2, 1.975 }, // mTime MStart MDuration
+									1, // mCueID
+									StillMedia #3371 { // mMedia
+										{ "/D:/Projects/Watchout/Studio 43/Watchout 2018-19 Media/2018-19 NFL CFB MEDIA BI" // mFile mPath
+											"N/saturday show images/BIG10 BW.png", 1055398, 1534960285, false, false, false, false }, // mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+										true, // mStagePreview
+										{ 1920, 1080 }, // mDim x y
+										1, // mAlphaMode
+										0, // mForcedAlphaMode
+										false, // mSuppressThumbnail
+										false, // mSprite
+										false, // mIsPreSplit
+										"" // mMultiFileExt
+									},
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										},
+										Crop struct extends {
+											SmartCompTrack struct extends {
+												TweenCompTrack struct extends {
+													TweenTrack struct extends {
+														TweenParam
+													} {
+														mExpanded bool,
+														mHeight int
+													}
+												} {
+													mSubTracks list TweenParam true
+												}
+											} {
+											}
+										} {
+										} {
+											true, // mExpanded
+											0, // mHeight
+											{ // mSubTracks
+												SubTweenTrack struct extends {
+													TweenPointTrack struct extends {
+														TweenTrack
+													} {
+														mPoints list TweenPoint true,
+														mExpr reference TweenExpression struct {
+															mExpr Expression,
+															mExprY Expression,
+															mExprZ Expression
+														} false
+													}
+												} {
+													mID int
+												} {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+														Plain1DTweenPoint struct extends {
+															_tween1DValue struct extends {
+																_quadTweenPoint
+															} {
+																mValue float
+															}
+														} {
+														} { 0.775, false, 0.244792 // mTimePos mSmooth mValue
+														}
+													},
+													#0, // mExpr
+													0 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+														Plain1DTweenPoint { 1, false, 0.24 } // mTimePos mSmooth mValue
+													},
+													#0, // mExpr
+													1 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+													},
+													#0, // mExpr
+													2 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+													},
+													#0, // mExpr
+													3 // mID
+												}
+											}
+										},
+										TweenPointTrack {
+											true, // mExpanded
+											0, // mHeight
+											{ // mPoints
+												ScaleTweenPoint struct extends {
+													_tweenPointQP
+												} {
+												} {
+													0.85, // mTimePos
+													false, // mSmooth
+													{ 2, 2, 0 } // mValue x y z
+												}
+											},
+											#0 // mExpr
+										},
+										TweenPointTrack {
+											true, // mExpanded
+											0, // mHeight
+											{ // mPoints
+												OpacityTweenPoint struct extends {
+													_tween1DValue
+												} {
+												} { 0, false, 0 // mTimePos mSmooth mValue
+												},
+												OpacityTweenPoint { 0.352, false, 1 }, // mTimePos mSmooth mValue
+												OpacityTweenPoint { 1, false, 1 }, // mTimePos mSmooth mValue
+												OpacityTweenPoint { 1.55, false, 0 } // mTimePos mSmooth mValue
+											},
+											#0 // mExpr
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 1180, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								}
+							},
+							false, // mExpanded
+							1, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							2, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							3, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						}
+					},
+					1, // mCurrLayerIndex
+					12, // mTimeScale
+					10:00.0, // mDuration
+					1, // mCueIDSeed
+					true, // mFrontmostAtTop
+					{ 0, 0, 0, 0, 0, false, 0, 0, 0 }, // MWinState mState mLeft mTop mWidth mHeight mActive MSashPos MHdrWidth MVScrollPos
+					false, // mFixedDuration
+					false, // mSpecTiers
+					0, // mTiers
+					0 // mAlwaysOnTop
+				}
+			},
+			TimelineTask {
+				0, // mTaskNum
+				{ // mTrigger
+					{ // mItems
+					}
+				},
+				{ // mAction
+					{ "", 0, 0, false, false, false, false }, // mFile mPath mFileSize mModDate mHasURL mIsProxy mNoDownload mAutoRefresh
+					true, // mStagePreview
+					{ 0, 0 }, // mDim x y
+					0, // mAlphaMode
+					0, // mForcedAlphaMode
+					false, // mSuppressThumbnail
+					"Timeline 87", // mName
+					{ // mLayers
+						{
+							"", // mName
+							{ // mCues
+								MediaCue {
+									{ 1.6, 1.975 }, // mTime MStart MDuration
+									1, // mCueID
+									#3371, // mMedia
+									0.0, // mPreroll
+									{ // mParams
+										AnchorTweenPointQuad {
+											0, // mTimePos
+											false, // mSmooth
+											{ 960, 540, 0 } // mValue x y z
+										},
+										Crop {
+											true, // mExpanded
+											0, // mHeight
+											{ // mSubTracks
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+														Plain1DTweenPoint { 0.775, false, 0.244792 } // mTimePos mSmooth mValue
+													},
+													#0, // mExpr
+													0 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+														Plain1DTweenPoint { 1, false, 0.24 } // mTimePos mSmooth mValue
+													},
+													#0, // mExpr
+													1 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+													},
+													#0, // mExpr
+													2 // mID
+												},
+												SubTweenTrack {
+													true, // mExpanded
+													0, // mHeight
+													{ // mPoints
+													},
+													#0, // mExpr
+													3 // mID
+												}
+											}
+										},
+										TweenPointTrack {
+											true, // mExpanded
+											0, // mHeight
+											{ // mPoints
+												ScaleTweenPoint {
+													0.85, // mTimePos
+													false, // mSmooth
+													{ 2, 2, 0 } // mValue x y z
+												}
+											},
+											#0 // mExpr
+										},
+										TweenPointTrack {
+											true, // mExpanded
+											0, // mHeight
+											{ // mPoints
+												OpacityTweenPoint { 0, false, 0 }, // mTimePos mSmooth mValue
+												OpacityTweenPoint { 0.352, false, 1 }, // mTimePos mSmooth mValue
+												OpacityTweenPoint { 1, false, 1 }, // mTimePos mSmooth mValue
+												OpacityTweenPoint { 1.55, false, 0 } // mTimePos mSmooth mValue
+											},
+											#0 // mExpr
+										}
+									},
+									0, // mPreviewQuality
+									{ 1060, 1180, 0 }, // mInitialPos x y z
+									false, // mOrientAlongPath
+									false, // mRenderAsMaskOnly
+									0, // mMask
+									0, // mBlend
+									false, // mExplicitTarget
+									#0, // mPlayThroughDisplay
+									#0, // mShader
+									0, // mStacking
+									0, // mOrientation
+									false, // mLocalVanishingPoint
+									"", // mInteractive
+									false // mExtTransform
+								}
+							},
+							false, // mExpanded
+							1, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							2, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						},
+						{
+							"", // mName
+							{ // mCues
+							},
+							false, // mExpanded
+							3, // mIndex
+							0, // mConditional
+							false, // mDisabled
+							0, // mStandBy
+							false, // mLocked
+							false, // mSpecLevels
+							0 // mLevels
+						}
+					},
+					1, // mCurrLayerIndex
+					50, // mTimeScale
+					10:00.0, // mDuration
+					1, // mCueIDSeed
+					true, // mFrontmostAtTop
+					{ 0, 0, 0, 0, 0, false, 0, 0, 0 }, // MWinState mState mLeft mTop mWidth mHeight mActive MSashPos MHdrWidth MVScrollPos
+					false, // mFixedDuration
+					false, // mSpecTiers
+					0, // mTiers
+					0 // mAlwaysOnTop
+				}
+			}
+		},
+		"TaskListItem" // mClassName
+	}
+}

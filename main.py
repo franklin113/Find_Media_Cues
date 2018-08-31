@@ -1,19 +1,17 @@
 import re
 from tkinter import *
 
-
 class search_gui(object):
 
 	def __init__(self, master):
 
 		self.master = master
 
-
-		self.instructionText = self.build_label('Enter filename below:')
-		self.searchButton = self.build_button('Search',self.search_callback)
+		self.instructionText = Label(self.master, text='Enter filename below:')
+		self.searchButton = Button(self.master, text='Search', command=self.search_callback)
 
 		self.filenameStringVar = StringVar()
-		self.filenameEntry = self.build_entry(self.filenameStringVar)
+		self.filenameEntry = Entry(self.master, textvariable=self.filenameStringVar)
 
 		#this changes after you search
 		self.auxNameVariable = StringVar()
@@ -27,15 +25,6 @@ class search_gui(object):
 
 		#when you open it you can immediately type
 		self.filenameEntry.focus_force()
-
-	def build_label(self,text):
-		return Label(self.master,text= text)
-
-	def build_button(self,text,command):
-		return Button(self.master,text=text, command = command)
-
-	def build_entry(self,stringVar):
-		return Entry(self.master, textvariable= stringVar)
 
 	def setup_grid(self):
 		self.instructionText.grid(row=1,column=1)
@@ -104,7 +93,7 @@ class scanner(object):
 
 		#self.perform_search(self.splitLinesData)
 
-	def find_aux_start_token(self,curLine):
+	def find_aux_start_token(self, curLine):
 
 		mo = self.beginAuxRe.search(curLine)
 
@@ -113,7 +102,7 @@ class scanner(object):
 		else:
 			return False
 
-	def find_aux_timeline_name(self,curLine):
+	def find_aux_timeline_name(self, curLine):
 
 		mo = self.auxTimelineNameRe.search(curLine)
 
@@ -126,7 +115,7 @@ class scanner(object):
 
 		mo = self.filenameRe.search(curLine,re.IGNORECASE)
 
-		if mo != None:
+		if mo is not None:
 			return mo.group()
 		else:
 			return None
@@ -163,7 +152,6 @@ class scanner(object):
 if __name__ == '__main__':
 	root = Tk()
 	root.title('')
-	root.iconbitmap(default='transparent.ico')
 	root.geometry("200x80")
 	search_gui(root)
 

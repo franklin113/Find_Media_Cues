@@ -142,6 +142,7 @@ class scanner(object):
 			filename = self.find_filename(line)
 
 			if filename is not None:
+
 				foundAux = False
 				foundTimelineName = False
 				foundFileName = False

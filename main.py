@@ -27,6 +27,7 @@ class search_gui(object):
 		self.filenameEntry.focus_force()
 
 	def setup_grid(self):
+
 		self.instructionText.grid(row=1,column=1)
 		self.filenameEntry.grid(row=2, column=1,padx=10)
 		self.searchButton.grid(row = 2,column=2)
@@ -34,6 +35,7 @@ class search_gui(object):
 		self.auxNameReturned.grid(row=3,column=1)
 
 	def search_callback(self):
+
 		clipboard = self.get_clipboard().splitlines()
 		currentEntry = self.filenameStringVar.get()
 
